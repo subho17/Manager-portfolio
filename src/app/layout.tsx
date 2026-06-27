@@ -1,0 +1,55 @@
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
+import ClientProviders from "@/Components/Providers/ClientProviders";
+import Navbar from "@/Components/Global/Navbar";
+import Footer from "@/Components/Global/Footer";
+import SmoothScroll from "@/Components/Providers/SmoothScroll";
+import "./globals.css";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const absans = localFont({
+  src: "../../public/fonts/absans-regular.woff2",
+  variable: "--font-absans",
+});
+
+export const metadata: Metadata = {
+  title: " Lion Gagan Kalra | portfolio",
+  description: "Career guidance, mentoring, and global education support for ambitious students.",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} ${absans.variable} antialiased bg-[#800080]`}
+      >
+        <ClientProviders>
+          <SmoothScroll>
+          <div className="relative z-10 bg-white mb-[700px] md:mb-[500px] shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex flex-col min-h-screen rounded-b-[60px] md:rounded-b-[90px] overflow-hidden transition-all duration-300">
+            <Navbar />
+            <main className="flex-grow pt-20 md:pt-[88px]">
+              {children}
+            </main>
+          </div>
+          <Footer />
+        </SmoothScroll>
+        </ClientProviders>
+      </body>
+    </html>
+  );
+}
+

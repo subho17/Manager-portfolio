@@ -1,0 +1,159 @@
+"use client";
+
+import Link from "next/link";
+import Image from "next/image";
+import { useState, useEffect, memo } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useModal } from "@/Components/Providers/ModalContext";
+
+const Navbar = memo(() => {
+    const [scrolled, setScrolled] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
+    const { openContact } = useModal();
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 20) {
+                setScrolled(true);
+            } else {
+                setScrolled(false);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    const navItems = [
+        { name: 'Home', href: '/' },
+        { name: 'About', href: '/about' },
+        { name: 'Gallery', href: '/gallery' },
+        { name: 'contact', href: '/contact' },
+        { name: "Awards", href: '/students-corner' },
+        { name: "Founder", href: '' }
+    ];
+
+    return (
+        <nav
+            className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ease-in-out ${scrolled
+                ? "py-2 bg-gray-50 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.1)]"
+                : "py-2.5 bg-gray-50"
+                }`}
+        >
+            <div className="max-w-[1400px] mx-auto px-4 lg:px-8 flex items-center justify-between">
+                <Link href="/" className="flex items-center gap-3 relative group flex-shrink-0">
+                    <div className={`relative overflow-hidden transition-all duration-500 ${scrolled ? 'w-10 h-10 sm:w-12 sm:h-12' : 'w-12 h-12 sm:w-14 sm:h-14'}`}>
+                        <Image
+                            src="/logo.jpg"
+                            alt="Logo"
+                            fill
+                            className="object-contain"
+                            priority
+                        />
+                    </div>
+                    <div className="flex flex-col leading-tight">
+                        <span className="text-base sm:text-lg font-black text-gray-900 tracking-tight">
+                            LIONS INTERNATIONAL
+                        </span>
+                        
+                    </div>
+                </Link>
+
+                {/* Desktop Menu */}
+                <div className="hidden md:flex flex-1 justify-center">
+                    <ul className="flex items-center space-x-6 lg:space-x-10">
+                        {navItems.map((item) => (
+                            <li key={item.name}>
+                                <Link
+                                    href={item.href}
+                                    className={`text-gray-800 hover:text-[#800080] font-semibold transition-all duration-300 tracking-wide relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-[2px] after:bottom-[-6px] after:left-0 after:bg-[#800080] after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left ${scrolled ? "text-[13px] lg:text-[15px]" : "text-sm lg:text-[16px]"
+                                        }`}
+                                >
+                                    {item.name}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+
+                <div className="hidden md:flex flex-shrink-0">
+                    <button
+                        onClick={openContact}
+                        className="bg-white text-[#800080] border-[1px] border-[#800080] px-7 py-2 rounded-md font-semibold tracking-wide transition-all duration-300 hover:bg-[#000000] hover:text-white hover:shadow-[0_8px_25px_rgba(128,0,128,0.3)] hover:border-none cursor-pointer active:scale-95"
+                    >
+                        Contact Us
+                    </button>
+                </div>
+
+                {/* Mobile Menu Toggle */}
+                <button
+                    onClick={() => setIsOpen(!isOpen)}
+                    className="md:hidden text-gray-800 p-2 z-[110] relative"
+                >
+                    <div className="w-6 h-5 flex flex-col justify-between items-end">
+                        <motion.span
+                            animate={{ rotate: isOpen ? 45 : 0, y: isOpen ? 9 : 0, width: isOpen ? "100%" : "100%" }}
+                            className="w-full h-0.5 bg-current rounded-full origin-right transition-all"
+                        />
+                        <motion.span
+                            animate={{ opacity: isOpen ? 0 : 1, width: "70%" }}
+                            className="h-0.5 bg-current rounded-full transition-all"
+                        />
+                        <motion.span
+                            animate={{ rotate: isOpen ? -45 : 0, y: isOpen ? -9 : 0, width: isOpen ? "100%" : "40%" }}
+                            className="h-0.5 bg-current rounded-full origin-right transition-all"
+                        />
+                    </div>
+                </button>
+            </div>
+
+            {/* Mobile Menu Overlay */}
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        initial={{ x: "100%" }}
+                        animate={{ x: 0 }}
+                        exit={{ x: "100%" }}
+                        transition={{ type: "spring", damping: 25, stiffness: 200 }}
+                        className="fixed inset-0 bg-white z-[105] md:hidden flex flex-col p-8 pt-24"
+                    >
+                        <div className="flex flex-col gap-6">
+                            {navItems.map((item, i) => (
+                                <motion.div
+                                    key={item.name}
+                                    initial={{ opacity: 0, x: 20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: 0.1 + i * 0.1 }}
+                                >
+                                    <Link
+                                        href={item.href}
+                                        onClick={() => setIsOpen(false)}
+                                        className="text-4xl font-black text-gray-900 tracking-tighter hover:text-[#800080] transition-colors"
+                                    >
+                                        {item.name}
+                                    </Link>
+                                </motion.div>
+                            ))}
+                        </div>
+
+                        <div className="mt-auto">
+                            <button
+                                onClick={() => {
+                                    setIsOpen(false);
+                                    openContact();
+                                }}
+                                className="w-full bg-[#800080] text-white py-5 rounded-2xl font-black uppercase tracking-widest text-sm shadow-2xl shadow-violet-500/20"
+                            >
+                                Contact Us
+                            </button>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </nav>
+    );
+});
+
+Navbar.displayName = "Navbar";
+
+export default Navbar;
