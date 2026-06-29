@@ -20,7 +20,7 @@ const PageTransition = () => {
             ease: [0.76, 0, 0.24, 1],
             delay: i * STAGGER,
           }}
-          className="relative h-full w-full bg-[#7a1212] origin-top"
+          className="relative h-full w-full bg-[#800080] origin-top"
         />
       ))}
 
@@ -36,7 +36,7 @@ const PageTransition = () => {
               ease: [0.76, 0, 0.24, 1],
               delay: i * STAGGER,
             }}
-            className="relative h-full w-full bg-[#7a1212] origin-bottom"
+            className="relative h-full w-full bg-[#800080] origin-bottom"
           />
         ))}
       </div>
