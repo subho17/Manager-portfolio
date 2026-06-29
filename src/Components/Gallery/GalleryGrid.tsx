@@ -10,159 +10,122 @@ const galleryItems = [
     {
         id: 1,
         category: "Events",
-        title: "Global Education Summit 2024",
-        image: "https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?q=80&w=2070&auto=format&fit=crop",
+        title: "Campus Event 1",
+        image: "/gagankalra/WhatsApp Image 2026-06-29 at 11.44.16 AM.jpeg",
         aspect: "aspect-[4/5]"
     },
     {
         id: 2,
         category: "Success Stories",
-        title: "Oxford Admission Celebration",
-        image: "https://images.unsplash.com/photo-1523050335392-9bc567c94bb5?q=80&w=2070&auto=format&fit=crop",
+        title: "Success Story 1",
+        image: "/gagankalra/WhatsApp Image 2026-06-29 at 11.44.17 AM.jpeg",
         aspect: "aspect-square"
     },
     {
         id: 3,
         category: "Campus Visits",
-        title: "Harvard Innovation Lab",
-        image: "https://images.unsplash.com/photo-1592280771190-3e2e4d571952?q=80&w=1974&auto=format&fit=crop",
+        title: "Campus Visit 1",
+        image: "/gagankalra/WhatsApp Image 2026-06-29 at 11.44.18 AM (1).jpeg",
         aspect: "aspect-[16/9]"
     },
     {
         id: 4,
         category: "Events",
-        title: "London Strategy Workshop",
-        image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=1949&auto=format&fit=crop",
+        title: "Campus Event 2",
+        image: "/gagankalra/WhatsApp Image 2026-06-29 at 11.44.18 AM.jpeg",
         aspect: "aspect-[4/5]"
     },
     {
         id: 5,
         category: "Success Stories",
-        title: "Ivy League Guidance",
-        image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop",
+        title: "Success Story 2",
+        image: "/gagankalra/WhatsApp Image 2026-06-29 at 11.44.19 AM.jpeg",
         aspect: "aspect-square"
     },
     {
         id: 6,
         category: "Campus Visits",
-        title: "Stanford Research Center",
-        image: "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=1986&auto=format&fit=crop",
+        title: "Campus Visit 2",
+        image: "/gagankalra/WhatsApp Image 2026-06-29 at 11.44.20 AM.jpeg",
         aspect: "aspect-[4/5]"
     },
     {
         id: 7,
         category: "Success Stories",
-        title: "MIT Research Presentation",
-        image: "https://images.unsplash.com/photo-1525921429624-479b6a29d531?q=80&w=2070&auto=format&fit=crop",
+        title: "Success Story 3",
+        image: "/gagankalra/WhatsApp Image 2026-06-29 at 11.44.21 AM.jpeg",
         aspect: "aspect-[16/9]"
     },
     {
         id: 8,
         category: "Events",
-        title: "Alumni Meet 2023",
-        image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=2070&auto=format&fit=crop",
+        title: "Campus Event 3",
+        image: "/gagankalra/WhatsApp Image 2026-06-29 at 11.44.22 AM.jpeg",
         aspect: "aspect-[4/5]"
     },
     {
         id: 9,
         category: "Success Stories",
-        title: "Cambridge Breakthrough",
-        image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop",
+        title: "Success Story 4",
+        image: "/gagankalra/WhatsApp Image 2026-06-29 at 11.44.25 AM (1).jpeg",
         aspect: "aspect-square"
     },
     {
         id: 10,
         category: "Campus Visits",
-        title: "Imperial Tech Immersion",
-        image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop",
+        title: "Campus Visit 3",
+        image: "/gagankalra/WhatsApp Image 2026-06-29 at 11.44.25 AM.jpeg",
         aspect: "aspect-[16/9]"
     },
     {
         id: 11,
         category: "Success Stories",
-        title: "Yale Leadership Forum",
-        image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2132&auto=format&fit=crop",
+        title: "Success Story 5",
+        image: "/gagankalra/WhatsApp Image 2026-06-29 at 11.44.26 AM (1).jpeg",
         aspect: "aspect-[4/5]"
     },
     {
         id: 12,
         category: "Events",
-        title: "Strategic Mentorship Day",
-        image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=2070&auto=format&fit=crop",
+        title: "Campus Event 4",
+        image: "/gagankalra/WhatsApp Image 2026-06-29 at 11.44.26 AM.jpeg",
         aspect: "aspect-[4/5]"
     },
- {
+    {
         id: 13,
         category: "Events",
-        title: "Strategic Mentorship Day",
-        image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=2070&auto=format&fit=crop",
+        title: "Campus Event 5",
+        image: "/gagankalra/WhatsApp Image 2026-06-29 at 11.44.27 AM (1).jpeg",
         aspect: "aspect-[4/5]"
     },
     {
         id: 14,
         category: "Events",
-        title: "Strategic Mentorship Day",
-        image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=2070&auto=format&fit=crop",
+        title: "Campus Event 6",
+        image: "/gagankalra/WhatsApp Image 2026-06-29 at 11.44.27 AM (2).jpeg",
         aspect: "aspect-[4/5]"
     },
-     {
+    {
         id: 15,
         category: "Events",
-        title: "Strategic Mentorship Day",
-        image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=2070&auto=format&fit=crop",
+        title: "Campus Event 7",
+        image: "/gagankalra/WhatsApp Image 2026-06-29 at 11.44.27 AM.jpeg",
         aspect: "aspect-[4/5]"
     },
-     {
+    {
         id: 16,
         category: "Events",
-        title: "Strategic Mentorship Day",
-        image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=2070&auto=format&fit=crop",
+        title: "Campus Event 8",
+        image: "/gagankalra/WhatsApp Image 2026-06-29 at 11.44.28 AM (1).jpeg",
         aspect: "aspect-[4/5]"
     },
-     {
+    {
         id: 17,
         category: "Events",
-        title: "Strategic Mentorship Day",
-        image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=2070&auto=format&fit=crop",
+        title: "Campus Event 9",
+        image: "/gagankalra/WhatsApp Image 2026-06-29 at 11.44.28 AM.jpeg",
         aspect: "aspect-[4/5]"
-    },
-     {
-        id: 18,
-        category: "Events",
-        title: "Strategic Mentorship Day",
-        image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=2070&auto=format&fit=crop",
-        aspect: "aspect-[4/5]"
-    },
-     {
-        id: 19,
-        category: "Events",
-        title: "Strategic Mentorship Day",
-        image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=2070&auto=format&fit=crop",
-        aspect: "aspect-[4/5]"
-    },
-     {
-        id: 20,
-        category: "Events",
-        title: "Strategic Mentorship Day",
-        image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=2070&auto=format&fit=crop",
-        aspect: "aspect-[4/5]"
-    },
-     {
-        id: 21,
-        category: "Events",
-        title: "Strategic Mentorship Day",
-        image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=2070&auto=format&fit=crop",
-        aspect: "aspect-[4/5]"
-    },
-     {
-        id: 22,
-        category: "Events",
-        title: "Strategic Mentorship Day",
-        image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=2070&auto=format&fit=crop",
-        aspect: "aspect-[4/5]"
-    },
-
-    
+    }
 ];
 
 const GalleryGrid = () => {
